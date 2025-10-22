@@ -1,0 +1,29 @@
+{
+  "name": "fuel_ts_test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "vitest",
+    "build:predicates": "forc build --path predicates/simple --release",
+    "typegen": "fuels typegen -i predicates/simple/out/release/simple-abi.json -o src/types",
+    "build": "npm run build:predicates && npm run typegen",
+    "build2": "fuels deploy"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^24.8.1",
+    "@vitest/ui": "^3.2.4",
+    "typescript": "^5.9.3",
+    "vitest": "^3.2.4"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "ethers": "^6.15.0",
+    "fuels": "^0.101.2",
+    "viem": "^2.38.3"
+  },
+  "type": "module"
+}
